@@ -6,6 +6,7 @@ const Products = ({title}) => (
     <Head>
       <title>{title}</title>
       <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+      <script>{console.log('Products')}</script>
     </Head>
     <Layout>
        <p>{`This is the ${title} page`}</p>
@@ -14,9 +15,6 @@ const Products = ({title}) => (
 )
 
 Products.getInitialProps = (context) => {
-
-  console.log(context.pathname)
-
   return {
     title: context.pathname
   }

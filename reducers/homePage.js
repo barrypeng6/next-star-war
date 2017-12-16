@@ -5,7 +5,7 @@ const initialState = {
 const homePageReducer = (state = initialState, action) => {
   console.log(action.type)
   switch (action.type) {
-    case 'GET_PAGES_REQ':
+    case 'GET_PAGES_REQUEST':
       return {
         loading: true,
         pages: []
@@ -13,7 +13,7 @@ const homePageReducer = (state = initialState, action) => {
     case 'GET_PAGES_SUCCESS':
       return {
         loading: false,
-        pages: [...state.pages, action.payload]
+        pages: action.payload
       }
     case 'GET_PAGES_FAILURE':
       return {

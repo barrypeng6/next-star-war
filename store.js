@@ -13,7 +13,7 @@ const initializeStore = initialState => {
     initialState,
     composeEnhancers( applyMiddleware(sagaMiddleware) )
   )
-  sagaMiddleware.run(rootSaga)
+  store.sagaTask = sagaMiddleware.run(rootSaga)
   return store
 }
 

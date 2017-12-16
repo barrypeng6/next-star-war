@@ -7,9 +7,6 @@ const Login = ({title}) => (
 )
 
 Login.getInitialProps = (context) => {
-
-  console.log(context.pathname)
-
   return {
     title: context.pathname
   }
