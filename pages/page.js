@@ -7,7 +7,7 @@ const Page =  (props) => (
     <Head>
       <title>{props.show.name}</title>
       <meta name="viewport" content="initial-scale=1.0, width=device-width" />
-      <script>{console.log('$$$ ' + props.show.name + ' $$$')}</script>
+      <script>{console.log('SEO: ' + props.show.name)}</script>
     </Head>
     <Layout>
        <h1>{props.show.name}</h1>

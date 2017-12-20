@@ -1,3 +1,4 @@
+import { fetchAllSettings } from './setting.api'
 const pages = [
   { id: 1, name: 'Page One' },
   { id: 2, name: 'Page Two' },
@@ -8,4 +9,7 @@ const pages = [
 
 const wait = (time) => new Promise(resolve => setTimeout(() => resolve(pages), time))
 
-export default wait
+export {
+  wait,
+  fetchAllSettings
+}

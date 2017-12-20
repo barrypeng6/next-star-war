@@ -6,17 +6,17 @@ import withReduxSaga from 'next-redux-saga'
 import initializeStore from '../store'
 import PageList from '../components/PageList'
 import {
-  getPagesRequestAction
+  getPagesRequestAction,
+  getSettingRequestAction
 } from '../actions'
 
 const Index = (props) => {
-  console.log(props)
   return (
     <div>
       <Head>
         <title>Home page</title>
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
-        <script>{console.log('Home')}</script>
+        <script>{console.log('SEO: Home')}</script>
       </Head>
       <Layout>
         <PageList />
@@ -27,8 +27,9 @@ const Index = (props) => {
 
 Index.getInitialProps = ({store, isServer, pathname, query}) => {
   // fetch pages 的時機：在ssr或store中無pages資料
-  if(isServer || store.getState().homePage.pages.length < 1) {
-    store.dispatch(getPagesRequestAction())
+  if(isServer || store.getState().settingReducer) {
+    // store.dispatch(getPagesRequestAction())
+    store.dispatch(getSettingRequestAction())
   }
   return
 }

@@ -8,7 +8,7 @@ import {
   getPagesFailureAction
 } from '../actions';
 
-import wait from '../api';
+import { wait } from '../api';
 
 export function* watchGetPagesFlow() {
   yield takeEvery('GET_PAGES_REQUEST', getPagesFlow)
